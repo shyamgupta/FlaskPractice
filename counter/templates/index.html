@@ -1,4 +1,11 @@
 {% extends 'base.html' %}
-{% if counter>0 %}
-	{{counter}}
-{% endif %}
+{% block counter_value %}
+<p>Number of times you've visited this site is: {{counter}}</p>
+<form action="/bytwo" method="post">
+	<input type="submit" value="+2" >
+</form>
+<form action="/reset" method="post">
+	<input type="submit" value="Reset" >
+</form>
+{% endblock %}
+
