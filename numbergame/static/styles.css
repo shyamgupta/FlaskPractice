@@ -4,21 +4,18 @@ body{
 	text-align: center;
 }
 
-.box{
+div{
 	width: 150px;
 	height: 150px;
-	line-height: 120px;
+	line-height: 100px;
 	color: white;
 	font-weight: 600;
-	display: inline-block;
-	border: 1px solid black;
-	margin: 10px;
-	vertical-align: top;
+	margin: 10px auto;
 }
-.wrong{
+.red{
 	background-color: red;
 }
-.correct{
+.green{
 	background-color: green;
 }
 

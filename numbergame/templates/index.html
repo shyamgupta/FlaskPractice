@@ -9,25 +9,20 @@
 	<h1>Welcome to the Great Number Game!</h1>
 	<p>I am thinking of a number between 1 and 100</p>
 	<p>Take a guess!</p>
-	{% if session['user_guess'] %}
-		{% if session['user_guess']== 'Too Low' %}
-		<div class="box wrong"><p>Too Low!</p></div>
-		{% elif session['user_guess']== 'Too High' %}
-		<div class="box wrong"><p>Too High!</p></div>
-		{% else  %}
-		<div class="box correct"><p>{{session['rand']}} was the number!</p>
-			<form action="/reset" method="post">
-				<input type="submit" value="Play Again!">
-			</form>
-		</div>
+	<div class="{{session['color_name']}}">
+		<p>{{session['message']}}</p>
+		{% if session['message'] == 'Right number!' %}
+		<form action="/reset" method="post">
+			<input type="submit" value="Play again!">
+		</form>
 		{% endif %}
-	{% endif %}
-	{% if session['user_guess'] !='Correct' %}
+	</div>
+	{% if session['message'] != 'Right number!'  %}
 	<form action="/guess" method="post">
-		<input type="text" name="guess" placeholder="Take a guess!">
+		<input type="text" name="guess" placeholder="Type a number">
 		<input type="submit" value="Submit">
 	</form>
 	{% endif %}
-
+	
 </body>
 </html>
