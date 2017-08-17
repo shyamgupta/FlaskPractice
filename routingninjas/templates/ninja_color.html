@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	{% if ninja_color=='blue' %}
+		<img src="{{url_for('static',filename='images/leonardo.jpg')}}" alt="leonardo">
+	{% elif ninja_color == 'orange'%}
+		<img src="{{url_for('static',filename='images/michelangelo.jpg')}}" alt="Michelangelo">
+	{% elif ninja_color =='red' %}
+		<img src="{{url_for('static',filename='images/raphael.jpg')}}" alt="Raphael">
+	{% elif ninja_color == 'purple' %}
+		<img src="{{url_for('static',filename='images/donatello.jpg')}}" alt="Donatello">
+	{% else %}
+		<img src="{{url_for('static',filename='images/notapril.jpg')}}" alt="Notapril">
+	{% endif %}
+{% endblock %}
