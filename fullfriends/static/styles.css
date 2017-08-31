@@ -1,0 +1,72 @@
+html{
+	width: 100%;
+}
+h1{
+	text-align: center;
+}
+
+body{
+	width: 80%;
+	margin: 0 auto;
+	background-color: grey;
+}
+
+table,th,td{
+	border: 2px solid black;
+	border-collapse: collapse;
+}
+
+th,td {
+	padding: 10px;
+}
+
+table.friends{
+	margin-left: 30%;
+}
+
+
+input[value="Edit"]{
+	background-color: green;
+	color: white;
+	font-size:large;
+}
+
+input[value="Delete"]{
+	background-color: red;
+	color: white;
+	font-size: large;
+}
+
+form.table{
+	display: inline;
+}
+
+form.addform{
+	margin-left: 30%;
+	padding-top: 2%;
+}
+.addform input{
+	margin-top: 1%;
+	font-size:small;
+}
+
+input[value="Add Friend"]{
+	background-color: blue;
+	color: white;
+	font-size: large;
+}
+
+#editpage{
+	margin-left: 30%;
+	padding-top: 2%;
+}
+#editpage input{
+	margin-top: 1%;
+	font-size:small;
+}
+
+#editpage input[value="Update"]{
+	background-color: blue;
+	color: white;
+	font-size: large;
+}

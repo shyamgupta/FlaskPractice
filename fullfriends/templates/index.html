@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="{{url_for('static',filename='styles.css')}}">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Full Friends</h1>
+	<table class="friends">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Occupation</th>
+				<th>Action</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for friend in all_friends %}
+				<tr>
+					<td>{{friend['id']}}</td>
+					<td>{{friend['first_name']}}</td>
+					<td>{{friend['last_name']}}</td>
+					<td>{{friend['occupation']}}</td>
+					<td>
+						<form action="/friends/{{friend['id']}}/edit" method="get" class="table">
+							<input type="submit" value="Edit">
+						</form>
+						<form action="/friends/{{friend['id']}}/delete" method="post" class="table">
+							<input type="submit" value="Delete">
+						</form>
+					</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+		
+	</table>
+	<form action="/friends" class="addform" method="post">
+		<input type="text" name="first" id="first">
+		<label for="first">First Name</label><br>
+		<input type="text" name="last" id="last">
+		<label for="last">Last Name</label><br>
+		<input type="text" name="occupation" id="occupation">
+		<label for="occupation">Occupation</label><br>
+		<input type="submit" value="Add Friend">
+	</form>
+</body>
+</html>
