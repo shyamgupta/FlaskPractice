@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link rel="stylesheet" href="{{url_for('static',filename='styles.css')}}">
+	<title>Login and Registration</title>
+</head>
+<body>
+		
+	<h2>Assignment: Login and Registration</h2>
+	
+	{% with messages = get_flashed_messages() %}
+		{% if messages %}
+			{% for message in messages: %}
+			<p>{{message}}</p>
+			{% endfor %}
+		{% endif %}
+	{% endwith %}
+
+	<form action="/login" id="login" method="post">
+		<fieldset>
+			<legend>Login</legend>
+			<input type="hidden" name="action" value="login">
+			<input type="text" name="email" id="email">
+			<label for="email">Email</label><br>
+			<input type="password" name="password" id="password">
+			<label for="password">Password</label><br>
+			<input type="submit" value="Login">
+		</fieldset>
+	</form>
+	<form action="/register" id="register" method="post">
+		<fieldset>
+			<legend>Register</legend>
+			<input type="hidden" name="action" value="register">
+			<input type="text" name="firstname" id="firstname">
+			<label for="firstname">First Name (Letters only, at least 2 characters)</label><br>
+			<input type="lastname" name="lastname" id="lastname">
+			<label for="lastname">Last Name (Letters only, at least 2 characters)</label><br>
+			<input type="text" name="email" id="email">
+			<label for="email">Email</label><br>
+			<input type="password" name="password" id="password">
+			<label for="password">Password (At least 8 characters)</label><br>
+			<input type="password" name="cpassword" id="cpassword">
+			<label for="cpassword">Confirm Password</label><br>
+			<input type="submit" value="Register">
+			
+		</fieldset>
+	</form>
+</body>
+</html>

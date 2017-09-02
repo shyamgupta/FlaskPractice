@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link rel="stylesheet" href="{{url_for('static',filename='styles.css')}}">
+	<title>Document</title>
+</head>
+<body>
+	<div id="success">
+		{% with messages = get_flashed_messages() %}
+			{% if messages %}
+				{% for message in messages: %}
+				<p>{{message}}</p>
+				{% endfor %}
+			{% endif %}
+		{% endwith %}
+		<p>ID: {{one_user['id']}}</p>
+		<p>First Name: {{one_user['first_name']}}</p>
+		<p>Last Name: {{one_user['last_name']}}</p>
+		<p>Email: {{one_user['email']}}</p>
+		<form action="/logout" method="post">
+			<input type="submit" value="Logout">
+		</form>
+	</div>
+</body>
+</html>
