@@ -80,19 +80,19 @@ def login():
 @app.route('/thewall')
 def thewall():
 	if 'email' in session:
-		#Retrieve details of logged in user
+		#Welcome message when user's logged in
 		query = 'SELECT first_name,last_name FROM users WHERE email=:email'
 		context = {'email':session['email']}
-		user_logged = mysql.query_db(query,context)
-		#Retrieve details of ALL users
-		query = 'SELECT users.id,messages.id,first_name,last_name,message,DATE_FORMAT(messages.updated_at,"%M-%d-%Y-%H:%i") AS updated_at FROM users LEFT OUTER JOIN messages ON users.id=messages.users_id ORDER BY messages.updated_at DESC'
+		user_name = mysql.query_db(query,context)
+		#Query all messages
+		query = 'SELECT users.first_name,users.last_name,messages.id AS message_id,messages.message,DATE_FORMAT(messages.created_at,"%M-%d-%Y") AS created_at FROM users LEFT OUTER JOIN messages ON users.id = messages.users_id ORDER BY messages.created_at DESC'
 		all_messages = mysql.query_db(query)
-		print "First message {}".format(all_messages[0])
-		return render_template('wall.html',all_messages=all_messages,user_logged=user_logged)
+		#Query all comments
+		query = 'SELECT comments.messages_id,comment,first_name,last_name,DATE_FORMAT(comments.created_at,"%M-%d-%Y") AS created_at FROM comments LEFT OUTER JOIN messages ON comments.messages_id = messages.id LEFT OUTER JOIN users ON comments.users_id = users.id ORDER BY comments.created_at ASC'
+		all_comments = mysql.query_db(query)
+		return render_template('wall.html',user_name=user_name,all_messages=all_messages,all_comments=all_comments)
 	else:
 		return redirect('/')
-
-
 
 #Post message
 @app.route('/message', methods=['POST'])

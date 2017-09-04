@@ -126,54 +126,69 @@ input[value='Logout']{
 	font-size: larger;
 }
 
-.wallmessage{
-	clear: both;
-	width: 90%;
-	outline: 1px solid red;
-	margin-left: 5%;
+
+.postmessage{
+	width: 40%;
+	margin: 4% 5%;
+	border: none;
+}
+
+input[value='Post Message']{
+	font-size: medium;
+	background-color: orange;
+	border: none;
+	padding: 1%;
+	color: white;
+	margin-top: 1%;
+	float: right;
 }
 
 .message{
-	padding: 2% 0%;
-	outline: 1px solid red;
+	width: 88%;
+	margin: 1% auto;
+	padding: 1%;
+	border-radius: 5px;
 }
 
-input[value='Post a message']{
-	font-size:large;
-	background-color: orange;
+.messagetime{
+	background-color: #587498;
+	width: 88%;
+	margin: 1% auto;
+	padding: 1%;
+	border-radius: 5px;
+}
+
+.postcomment{
+	width: 40%;
+	margin: 0% 4% 5% 5%;
+	border: none;
+}
+
+input[value='Post Comment']{
+	font-size: medium;
+	background-color: rgb(0,155,199);
+	border: none;
+	padding: 1%;
 	color: white;
-	border: none;
-	box-shadow: 3px 3px 3px black;
-	border-radius: 2px;
-	margin: 2% 0%;
+	float: right;
+}
+
+.commenttime{
+	background-color: pink;
+	width: 75%;
+	margin: 1% auto;
 	padding: 1%;
+	border-radius: 5px;
+	color: black;
+	font-weight: bold;
 }
 
-.usermessage{
-	background-color:rgb(0,155,199);
+.comment{
+	background-color: pink;
+	width: 75%;
+	margin: 1% auto;
 	padding: 1%;
-	box-shadow: 4px 4px 4px black;
+	border-radius: 5px;
+	color: black;
 }
-
-.comment textarea{
-	border: none;
-}
-
-.comment legend{
-	color: orange;
-}
-
-input[value='Comment']{
-	font-size:small;
-	background-color: green;
-	color: white;
-	border: none;
-	box-shadow: 3px 3px 3px black;
-	border-radius: 2px;
-	margin: 2% 0%;
-	padding: 1%;
-}
-
-
-
 
