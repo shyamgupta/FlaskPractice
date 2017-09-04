@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+	<header>
+		<h1 class="indexheader">CodingDojo: The Wall</h1>
+	</header>
+	<div class="indexdiv">
+	<form action="/login" method="post" class="indexform login">
+		<input type="text" name="email" id="email">
+		<label for="email">Email</label><br>
+		<input type="password" name="password">
+		<label for="password">Password</label><br>
+		<input type="submit" value="Login">
+	</form>
+	
+	<form action="/register" method="post" class="indexform register">
+		<input type="text" name="first_name" id="first_name" placeholder="Mininum 2 characters">
+		<label for="first_name">First Name</label><br>
+		<input type="text" name="last_name" id="last_name" placeholder="Mininum 2 characters">
+		<label for="last_name">Last Name</label><br>
+		<input type="text" name="email" id="email">
+		<label for="email">Email</label><br>
+		<input type="password" name="password" id="password" placeholder="Mininum 8 characters">
+		<label for="password">Password</label><br>
+		<input type="password" name="confirm_password" id="confirm_password">
+		<label for="confirm_password">Confirm Password</label><br>
+		<input type="submit" value="Register">
+	</form>
+	{% with messages = get_flashed_messages() %}
+		{% if messages %}
+			{% for message in messages: %}
+				<p class="indexmessage">{{message}}</p>
+			{% endfor %}
+		{% endif %}
+	{% endwith %}
+	</div>
+{% endblock %}
