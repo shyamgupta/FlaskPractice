@@ -1,0 +1,45 @@
+table{
+	border-collapse: collapse;
+}
+
+table,th,td{
+	border: 2px solid black;
+	padding: 5px;
+}
+
+.action{
+	display: inline-block;
+	margin: 5px;
+	text-decoration: none;
+	box-shadow: 2px 2px black;
+	padding: 5px;
+	color: white;
+}
+
+.show{
+	background-color: green;
+}
+
+.edit{
+	background-color: blue;
+}
+
+.delete{
+	background-color: red;
+}
+
+.add{
+	display: block;
+	margin-top: 10px;
+	padding: 5px;
+	width: 100px;
+	box-shadow: 2px 2px black;
+	background-color: purple;
+	color: white;
+	text-decoration: none;
+}
+
+a:hover{
+	background-color: orange;
+	color: white;
+}
