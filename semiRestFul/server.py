@@ -12,7 +12,7 @@ def index():
 	return render_template('index.html' ,all_users=all_users)
 
 app.route('/users/<id>')
-def show():
+def show(id):
 	return render_template('index.html')
 
 app.route('/users/<id>/edit')

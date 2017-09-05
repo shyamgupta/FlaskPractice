@@ -24,14 +24,14 @@
 					<td>{{user['email']}}</td>
 					<td>{{user['Created At']}}</td>
 					<td>
-						<a href="{{url_for('/users/<id>')}}" class="action show">Show</a>
-						<a href="{{url_for('/users/<id>/edit')}}" class="action edit">Edit</a>
-						<a href="{{url_for('/users/<id>/destroy')}}" class="action delete">Delete</a>
+						<a href="/users/{{user['id']}}" class="action show">Show</a>
+						<a href="/users/{{user['id']}}/edit" class="action edit">Edit</a>
+						<a href="/users/{{user['id']}}/destroy" class="action delete">Delete</a>
 					</td>
 				</tr>
 			{% endfor %}
 		</tbody>
 	</table>
-	<a href="{{url_for('/users/new')}}" class="add">Add a new user</a>
+	<a href="/users/new" class="add">Add a new user</a>
 </body>
 </html>
